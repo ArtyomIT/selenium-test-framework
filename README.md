@@ -1,57 +1,47 @@
-# Auto_tests_for_portfolio
+# Selenium Test Framework
 
-Автоматизированные тесты для портфолио, основанные на курсе Stepik: [https://stepik.org/course/575](https://stepik.org/course/575)
+UI test automation project built with **Python, Pytest, Selenium WebDriver** and **Page Object Model**.
 
-## 📘 Описание
+## About
 
-Этот проект представляет собой набор автоматизированных тестов для веб-приложения, реализованный с использованием Python, Selenium и Pytest. Он охватывает основные аспекты тестирования веб-приложений, включая:
+This project demonstrates a structured approach to web UI test automation for an e-commerce application.
 
-- Регистрацию и авторизацию пользователей
-- Добавление товаров в корзину
-- Проверку отображения сообщений об успешных действиях
-- Проверку корректности отображаемых данных (цен, названий товаров)
+It covers:
 
-Проект служит практическим примером для демонстрации навыков автоматизированного тестирования.
+- Page Object Model architecture
+- reusable page methods
+- centralized locators
+- fixtures and custom pytest options
+- parametrized tests
+- positive and negative scenarios
+- guest and authorized user flows
+- basket validation scenarios
+- multilingual test execution
 
-## ⚙️ Технологии
+The framework is designed as a portfolio project to showcase practical QA Automation skills: clean test architecture and maintainable Selenium code.
 
-- Python 3.13+
-- Selenium WebDriver
+## Stack
+
+- Python
 - Pytest
+- Selenium WebDriver
 - Page Object Model (POM)
-- Регулярные выражения (для извлечения данных из текста)
 
-## 🚀 Установка
+## Project Structure
 
-1. Клонируйте репозиторий:
+```text
+pages/
+  base_page.py        # Base page with shared methods and assertions
+  basket_page.py      # Basket page actions and checks
+  locators.py         # Centralized locators
+  login_page.py       # Login/registration page object
+  main_page.py        # Main page object
+  product_page.py     # Product page object
 
-```bash
-git clone https://github.com/ArtyomIT/Auto_tests_for_portfolio.git
-cd Auto_tests_for_portfolio
-```
+tests/
+  test_main_page.py
+  test_product_page.py
 
-2. Установите зависимости:
-   
-```bash
-pip install -r requirements.txt
-```
-
-## ▶️ Запуск тестов
-
-Все тесты сразу:
-
-```bash
-pytest -v --tb=line --language=en 
-```
-
-
-Все тесты с фикстурой need_review:
-
-```bash
-pytest -v --tb=line --language=en -m need_review
-```
-
-Отдельный тест (пример):
-```bash
-pytest -v --tb=short --language=ru -k "test_user_can_add_product_to_basket"
-```
+conftest.py           # Fixtures and custom CLI options
+pytest.ini            # Pytest configuration
+requirements.txt      # Project dependencies
