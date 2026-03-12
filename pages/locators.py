@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
-    CHECK_BASKET = (By.XPATH, '//a[@href = "/ru/basket/"]')
+    CHECK_BASKET = (By.XPATH, '//a[contains(@href, "basket")]')
 
     USER_ICON = (By.XPATH, "//i[@class = 'icon-user']")
 
